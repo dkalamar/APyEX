@@ -1,11 +1,11 @@
-#Apex Assistant
+# Apex Assistant
 Tools to aid in the visualization and analysis of Apex Legends gameplay (In Progress)
 
 The battle royale, Apex Legends, while it has a growing playerbase, has offered little support
 for its professional community.This project aims to provide better coverage and visualizations
 during scrimmages and tournaments, and analyze the results clearly and in real-time.
 
-#Part 1) Map Visualization
+# Part 1) Map Visualization
 One of the worst parts of watching professional gameplay is that the only camera views come from
 single first-person views one player at a time. This limits the audience from understanding the big
 picture positioning and movements of all 20 teams, as well as sometimes missing the action, when the
