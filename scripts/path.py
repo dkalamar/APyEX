@@ -3,8 +3,8 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import math
-from lib.parse import parse_minimap
-from lib.stream import read_frames
+from library.parse import parse_minimap
+from library.stream import read_frames
 
 master = cv2.imread('data/worldedge.png')
 methods = [

@@ -1,6 +1,6 @@
-from lib.stream import read_frames
-from lib.ocr import read_text
-from lib.parse import parse_killfeed
+from library.stream import read_frames
+from library.ocr import read_text
+from library.parse import parse_killfeed
 
 
 def pull_killfeed():
