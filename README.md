@@ -13,7 +13,7 @@ coverage follows the wrong players.
 
 This tool will plot the paths of all players 
 
-#Part 2) Killfeed tracking
+# Part 2) Killfeed tracking
 There have been hundreds of scrims by professional players that haven't been analyzed. This tool will use
 OCR to create a log cache of a games killfeed so analysts don't have to watch every single game from every
 players perspective.
