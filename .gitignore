@@ -131,4 +131,7 @@ dmypy.json
 .pyre/
 
 # pytype static type analyzer
+
 .pytype/
+
+data/frame_cache/*

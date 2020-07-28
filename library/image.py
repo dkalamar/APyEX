@@ -1,7 +1,6 @@
 import cv2
 import matplotlib.pyplot as plt
 
-
 def cap_data(cap):
     return {
                 'height': int(cap.get(3)),
@@ -39,3 +38,6 @@ def crop_cimage(img, cropx, cropy):
 def show_img(img_to_show):
     plt.imshow(img_to_show)
     plt.show()
+
+def save_img(im,path):
+    plt.imsave(path,im)
