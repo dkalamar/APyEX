@@ -13,7 +13,6 @@ def its(image):
     return out_standard, out_inverted
 
 
-
 def read_digits(im,inverted=True):
     if isinstance(im, np.ndarray):
         im = Image.fromarray(im)
@@ -25,8 +24,6 @@ def read_digits(im,inverted=True):
     builder.tesseract_flags = ['--psm', '10']
     return tool.image_to_string(im, lang="eng", builder=builder)
 
-
-
 def read_text(im,inverted=True):
     if isinstance(im, np.ndarray):
         im = Image.fromarray(im)
@@ -37,33 +34,24 @@ def read_text(im,inverted=True):
     return tool.image_to_string(im, lang="eng", builder=builder)
 
 
-<<<<<<< HEAD
-def read_lines(im):
-    if isinstance(im, np.ndarray):
-        im = Image.fromarray(im)
-=======
 def read_lines(im,inverted=False):
     if isinstance(im, np.ndarray):
         im = Image.fromarray(im)
     if inverted:
         im = PIL.ImageOps.invert(im.convert('RGB'))
->>>>>>> 73d6c86e6136a1f51dd1a14071094f57ae7578d3
     tool = pyocr.get_available_tools()[0]
     builder = pyocr.builders.LineBoxBuilder()
     return tool.image_to_string(im, lang="eng", builder=builder)
 
-
-<<<<<<< HEAD
 def read_boxes(im):
     if isinstance(im, np.ndarray):
         im = Image.fromarray(im)
-=======
+
 def read_boxes(im,inverted=False):
     if isinstance(im, np.ndarray):
         im = Image.fromarray(im)
     if inverted:
         im = PIL.ImageOps.invert(im.convert('RGB'))
->>>>>>> 73d6c86e6136a1f51dd1a14071094f57ae7578d3
     tool = pyocr.get_available_tools()[0]
     builder = pyocr.builders.WordBoxBuilder()
     return tool.image_to_string(im, lang="eng", builder=builder)

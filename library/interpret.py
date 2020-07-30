@@ -1,5 +1,6 @@
 import itertools
 import numpy as np
+import re
 import jellyfish as jfish
 
 weapons = [
@@ -10,6 +11,7 @@ weapons = [
 ]
 common_errors = {"WASTIRR": "MASTIFF", ")CHAVOG:": "HAVOC"}
 
+actions = {'BLEED OUT', 'DEFENSIVE BOMBARDMENT', 'RING', 'MELEE', 'FINISHER', 'PINGED'}
 
 def inventory(w):
     inv = [(None, None)]
@@ -33,3 +35,20 @@ def _compare_inv(f, o=None):
         else:
             return o
     return f
+
+def killfeed_line(line):
+    line = line.upper()
+    target = line.split(' ')[-1]
+    regex_action = r'\[(.*)\]'
+    action = next(iter(re.findall(regex_action, line)), None)
+    downed = 'DOWN' in line
+    remainder = iter(
+        re.sub(f'({target}|{regex_action}|down)', '', line).split(' '))
+    return {
+        'killer': next(remainder),
+        'weapon': next(remainder),
+        'action': action,
+        'down': downed,
+        'target': target
+    }
+

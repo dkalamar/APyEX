@@ -1,7 +1,6 @@
 import cv2
 from .ocr import read_digits, read_lines, read_text
 from .image import cap_data
-
 from . import parse, interpret
 from tqdm import tqdm
 import pandas as pd
@@ -17,7 +16,7 @@ def process_video(filename='apex/data/tsm.6.02/Round1/nicewigg.mp4', fps=20):
         ret, frame = cap.read()
         if i % jump == 0 and ret:
             frame_data = {'i': i, 'time': cd['time'] * i / cd['frames']}
-            parsed = parse_frame(frame, dim)
+            parsed = parse.frame(frame, dim)
             frames.append({
                 **frame_data,
                 **process_frame(frame, dim), 'parsed': parsed
@@ -33,16 +32,6 @@ def process_frame(parsed):
         'playercount': read_digits(parsed['playercount']),
         'primary': read_text(parsed['primary']),
         'secondary': read_text(parsed['secondary'])
-    }
-
-
-def parse_frame(frame, dim=[1080, 1920]):
-    return {
-        x: getattr(parse, f'parse_{x}')(frame, dim)
-        for x in [
-            'killfeed', 'round', 'clock', 'playercount', 'minimap', 'primary',
-            'secondary'
-        ]
     }
 
 
@@ -76,7 +65,7 @@ def parse_video(filename='apex/data/tsm.6.02/Round1/nicewigg.mp4',
             frame_data = {
                 'i': i,
                 'time': cd['time'] * i / cd['frames'],
-                'parsed': parse_frame(frame, dim),
+                'parsed': parse.frame(frame, dim),
                 'raw': frame
             }
             frames.append(frame_data)

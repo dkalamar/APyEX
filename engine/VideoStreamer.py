@@ -11,9 +11,6 @@ class VideoStreamer:
         self.twitch_url = twitch_url
         self.res = resolution
         self.n_frame = n_frame
-
-        # initialize the queue used to store frames read from
-        # the video stream
         self.Q = Queue(maxsize=queueSize)
         checkIfStreamsWorks = self.create_pipe()
 

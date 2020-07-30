@@ -1,4 +1,5 @@
-from ..library.stream import parse_video, parse_frame,process_frame
+from ..library import parse
+from ..library.stream import parse_video, process_frame
 from ..library.image import save_img
 from ..engine.VideoStreamer import VideoStreamer
 import re
@@ -50,7 +51,7 @@ def stream(link, save_name, skip=1):
         while True:
             frame = vs.read()
             if i % skip == 0:
-                parsed = parse_frame(frame, [720, 1280])
+                parsed = parse.frame(frame, [720, 1280])
                 save_parsed(parsed, save_name, k)
                 k += 1
             i += 1

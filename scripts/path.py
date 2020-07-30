@@ -3,7 +3,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import math
-from library.parse import parse_minimap
+from library import parse
 from library.stream import read_frames
 
 master = cv2.imread('data/worldedge.png')
@@ -124,6 +124,6 @@ def find_template(img, template, meth='cv2.TM_CCORR'):
 
 
 def read_and_plot():
-    mm = read_frames(jump=10, limit=100, parser=parse_minimap)
+    mm = read_frames(jump=10, limit=100, parser=parse.minimap)
     positions = extract_path(mm)
     plot_path(positions)
