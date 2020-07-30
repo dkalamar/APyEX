@@ -15,3 +15,5 @@ One of the worst parts of watching professional gameplay is that the only camera
 single first-person views one player at a time. This limits the audience from understanding the big
 picture positioning and movements of all 20 teams, as well as sometimes missing the action, when the
 coverage follows the wrong players. This tool will plot the paths of all players 
+
+THIS PROJECT IS FOR THE PURPOSE OF VIEWERS AND ANALYSTS ONLY. WE DO NOT CONDONE THE USAGE OF ANY IN-GAME TOOLS TO GAIN A COMPETITIVE EDGE. 
